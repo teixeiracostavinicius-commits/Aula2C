@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tetris Arcade Ultimate</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game-container">
+    <div class="header">
+      <h1>TETRIS</h1>
+    </div>
+
+    <div class="main-content">
+      <!-- Painel Esquerdo: Peça Guardada (Hold) -->
+      <div class="side-panel">
+        <div class="panel-box">
+          <div class="panel-label">GUARDADA</div>
+          <canvas id="hold" width="90" height="90"></canvas>
+          <span class="key-hint">[C / Shift]</span>
+        </div>
+
+        <div class="panel-box">
+          <div class="panel-label">NÍVEL</div>
+          <div id="level" class="panel-value">1</div>
+        </div>
+
+        <div class="panel-box">
+          <div class="panel-label">LINHAS</div>
+          <div id="lines" class="panel-value">0</div>
+        </div>
+      </div>
+
+      <!-- Tabuleiro Principal -->
+      <div class="canvas-wrapper">
+        <canvas id="tetris" width="240" height="400"></canvas>
+        <div id="combo-popup" class="combo-popup hidden">TETRIS!</div>
+        
+        <!-- Overlay Pausa / Game Over -->
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay-content">
+            <h2 id="overlay-title">PAUSADO</h2>
+            <p id="overlay-msg">Pressione P para Continuar</p>
+            <button id="restart-btn" class="btn">JOGAR NOVAMENTE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel Direito: Próxima Peça e Pontuação -->
+      <div class="side-panel">
+        <div class="panel-box">
+          <div class="panel-label">PRÓXIMA</div>
+          <canvas id="next" width="90" height="90"></canvas>
+        </div>
+
+        <div class="panel-box">
+          <div class="panel-label">PONTOS</div>
+          <div id="score" class="panel-value">0</div>
+        </div>
+
+        <button id="pause-btn" class="btn btn-secondary">PAUSA</button>
+      </div>
+    </div>
+
+    <!-- Controles Mobile -->
+    <div class="mobile-controls">
+      <div class="control-row">
+        <button id="btn-hold" class="touch-btn sm-btn">HOLD</button>
+        <button id="btn-rotate" class="touch-btn">↻</button>
+        <button id="btn-pause" class="touch-btn sm-btn">⏸</button>
+      </div>
+      <div class="control-row">
+        <button id="btn-left" class="touch-btn">◄</button>
+        <button id="btn-down" class="touch-btn">▼</button>
+        <button id="btn-right" class="touch-btn">►</button>
+      </div>
+      <div class="control-row">
+        <button id="btn-drop" class="touch-btn btn-wide">HARD DROP</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>ad
